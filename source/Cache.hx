@@ -47,7 +47,7 @@ class Cache extends MusicBeatState
 		bitmapData = new Map<String,FlxGraphic>();
 		bitmapData2 = new Map<String,FlxGraphic>();
 
-		var menuBG:FlxSprite = new FlxSprite().loadGraphic(Paths.image('funkay'));
+		var menuBG:FlxSprite = new FlxSprite().loadGraphic(Paths.image('Well'));
 		menuBG.screenCenter();
 		add(menuBG);
 
@@ -57,7 +57,7 @@ class Cache extends MusicBeatState
 		add(shitz);
 
 		#if cpp
-		for (i in FileSystem.readDirectory(FileSystem.absolutePath("assets/shared/images/characters")))
+		for (i in FileSystem.readDirectory(FileSystem.absolutePath("assets/preload/images")))
 		{
 			if (!i.endsWith("Well.png"))
 				continue;
@@ -99,7 +99,7 @@ class Cache extends MusicBeatState
 		for (i in images)
 		{
 			var replaced = i.replace("Well.png","");
-			var data:BitmapData = BitmapData.fromFile("assets/shared/images/characters/" + i);
+			var data:BitmapData = BitmapData.fromFile("assets/preload/images" + i);
 			var graph = FlxGraphic.fromBitmapData(data);
 			graph.persist = true;
 			graph.destroyOnNoUse = false;
